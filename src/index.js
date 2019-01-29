@@ -13,14 +13,35 @@ function App() {
     setCount(0)
   }
 
+  const recordCount = () => {
+    let el = document.querySelector("#results");
+    let foo = document.createElement('p');
+    foo.innerText = count
+    el.prepend(foo)
+  }
+
   return (
     <div className="App">
+      <h2>Buttons</h2>
+      <div>
       <Button integer={1} onClickFunction={changeCount} />
       <Button integer={10} onClickFunction={changeCount} />
-      <Button integer="Reset" onClickFunction={resetCount} />
+      </div>
+      <div>
       <Button integer={-1} onClickFunction={changeCount} />
       <Button integer={-10} onClickFunction={changeCount} />
-      <div>{count}</div>
+      </div>
+      <div>
+      <Button integer="Reset" onClickFunction={resetCount} />
+      <Button integer="Save" onClickFunction={recordCount} />
+      </div>
+      <div>
+        <p>Count: {count}</p>
+      </div>
+      <hr/>
+      <hr/>
+      <h2>Results</h2>
+      <div id="results"></div>
     </div>
   )
 }
