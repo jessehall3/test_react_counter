@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Button = ({ increment, onClickFunction }) => {
+const Button = ({ integer, onClickFunction }) => {
   const handleClick = () => {
-    onClickFunction(increment)
+    onClickFunction(integer)
   }
-  return <button onClick={handleClick}>+{increment}</button>
+  const plus_sign = integer > 0 ? "+" : ""
+  return <button onClick={handleClick}>{plus_sign}{integer}</button>
 }
 
 export default Button

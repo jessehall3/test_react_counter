@@ -5,8 +5,8 @@ import Button from './components/Button'
 function App() {
   const [count, setCount] = useState(0)
 
-  const incrementCount = increment => {
-    setCount(count + increment)
+  const changeCount = integer => {
+    setCount(count + integer)
   }
 
   const resetCount = () => {
@@ -15,12 +15,12 @@ function App() {
 
   return (
     <div className="App">
-      <Button increment={1} onClickFunction={incrementCount} />
-      <Button increment={10} onClickFunction={incrementCount} />
-      <Button increment={100} onClickFunction={incrementCount} />
-      <Button increment={1000} onClickFunction={incrementCount} />
-      <Button increment="Reset" onClickFunction={resetCount} />
-      <span>{count}</span>
+      <Button integer={1} onClickFunction={changeCount} />
+      <Button integer={10} onClickFunction={changeCount} />
+      <Button integer="Reset" onClickFunction={resetCount} />
+      <Button integer={-1} onClickFunction={changeCount} />
+      <Button integer={-10} onClickFunction={changeCount} />
+      <div>{count}</div>
     </div>
   )
 }
