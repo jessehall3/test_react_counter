@@ -9,12 +9,17 @@ function App() {
     setCount(count + increment)
   }
 
+  const resetCount = () => {
+    setCount(0)
+  }
+
   return (
     <div className="App">
       <Button increment={1} onClickFunction={incrementCount} />
       <Button increment={10} onClickFunction={incrementCount} />
       <Button increment={100} onClickFunction={incrementCount} />
       <Button increment={1000} onClickFunction={incrementCount} />
+      <Button increment="Reset" onClickFunction={resetCount} />
       <span>{count}</span>
     </div>
   )
